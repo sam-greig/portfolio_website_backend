@@ -3,7 +3,7 @@ const app = express();
 const PORT = 4000;
 
 app.get('/home', (req, res) => {
-    res.status(200).json('Welcome, your app is working well');
+    res.status(200).json('Welcome, your app is working well. This is a test: '+process.env.EMAILJS_USER_ID);
 });
 
 app.listen(PORT, () => {
