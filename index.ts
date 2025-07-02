@@ -1,10 +1,9 @@
-require('dotenv').config();
 const express = require('express');
 const app = express();
 const PORT = 4000;
-
 app.get('/home', (req, res) => {
-    res.status(200).json('Welcome, your app is working well. This is a test: '+process.env.EMAILJS_USER_ID);
+    const userId = process.env.EMAILJS_USER_ID;
+    res.status(200).json(`Welcome, your app is working well. This is a test: ${userId}`);
 });
 
 app.listen(PORT, () => {
